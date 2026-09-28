@@ -74,10 +74,10 @@ main section.sc-current>.section-head h2,main section.sc-current>h2,main h2.sc-c
 @media(prefers-reduced-motion:reduce){.sc-visual{transform:none!important}.sc-visual-path{stroke-dashoffset:0!important}.hero::after{opacity:.55!important}.sc-track>span{transition:none!important}}
 </style>
 </head>
-<body>
+<body style="--plate-a:#ffbb45;--plate-b:#f96335">
 <a class="skip" href="#main">לתוכן</a>
 <header class="top"><div class="wrap"><a class="brand" href="#top">DATA<span>&amp;</span>AI</a><nav aria-label="ניווט ראשי"><a href="#guides">מדריכי Claude</a><a href="#tools">כלים</a><a href="#digest">דיג'סט BI</a></nav></div></header>
-<div id="top" class="hero"><canvas class="fx-aurora" aria-hidden="true"></canvas><div class="sc-visual sc-hub" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path class="sc-visual-path" d="M20 60 L42 25 L74 30 L80 72 L48 80"/><circle class="sc-dot sc-dot-0" cx="20" cy="60" r="2"/><circle class="sc-dot sc-dot-1" cx="42" cy="25" r="2"/><circle class="sc-dot sc-dot-2" cx="74" cy="30" r="3"/><circle class="sc-dot sc-dot-3" cx="80" cy="72" r="2"/><circle class="sc-dot sc-dot-4" cx="48" cy="80" r="2"/></svg><span class="sc-visual-caption">שישה מסלולים · מקום אחד</span></div><div class="wrap"><div class="eyebrow">DATA &amp; AI · כל האתרים במקום אחד</div><h1>המדריכים והדיג'סט, <span class="grad">בכתובת אחת.</span></h1><p>סדרת מדריכי Claude מעשיים בעברית, ודיג'סט BI שמתעדכן כל יום. כל אתר עומד בפני עצמו - כאן נכנסים לכל אחד.</p><div class="pills"><span class="pill">6 אתרים</span><span class="pill">עברית · RTL</span><span class="pill">מתעדכן שוטף</span></div></div></div>
+<div id="top" class="hero"><canvas class="fx-aurora" aria-hidden="true"></canvas><div class="sc-visual sc-hub" aria-hidden="true"><div class="plate"></div><svg viewBox="0 0 700 460" preserveAspectRatio="xMidYMid meet" role="presentation"><g class="lines"><circle cx="350" cy="230" r="179"/><circle cx="350" cy="230" r="126"/><circle cx="350" cy="230" r="73"/><path d="M0 230H700 M350 0V460 M102 48L598 412 M102 412L598 48"/></g><g class="nodes"><circle cx="350" cy="52" r="9"/><circle cx="493" cy="130" r="7"/><circle cx="521" cy="290" r="13"/><circle cx="350" cy="356" r="9"/><circle cx="206" cy="333" r="6"/><circle cx="223" cy="119" r="11"/></g><text class="mass" x="350" y="265" text-anchor="middle">&amp;</text></svg><span class="sc-visual-caption">ATLAS / 00 / מפת התוכן</span></div><div class="wrap"><div class="eyebrow">DATA &amp; AI · כל האתרים במקום אחד</div><h1>המדריכים והדיג'סט, <span class="grad">בכתובת אחת.</span></h1><p>סדרת מדריכי Claude מעשיים בעברית, ודיג'סט BI שמתעדכן כל יום. כל אתר עומד בפני עצמו - כאן נכנסים לכל אחד.</p><div class="pills"><span class="pill">6 אתרים</span><span class="pill">עברית · RTL</span><span class="pill">מתעדכן שוטף</span></div></div></div>
 <main id="main" class="wrap">
 <section aria-labelledby="digest-title" id="digest"><div class="section-head"><div><div class="section-tag">01 / מתעדכן יומית</div><h2 id="digest-title">דיג'סט BI</h2><p>מהדורה יומית של רעיונות מעשיים ל-Power BI, BI בארגון ו-Claude, עם עדכוני הגרסה החודשית של Microsoft.</p></div></div>
 <div class="sites">
@@ -147,6 +147,49 @@ html.fx .sites .site:nth-child(6),html.fx .fcard:nth-child(6){animation-delay:.3
 .fx-aurora{opacity:.4}
 .site:hover .go::after,.go:hover::after,.btn:hover::after{animation:none}
 }
+
+
+/* September 2026: editorial atlas, handmade SVG plates; CSS and artwork original. */
+body{--plate-a:#ffbb45;--plate-b:#f96335;background:#080a0e;color:#f8f7f3}
+body::before{background:radial-gradient(ellipse at 90% 15%,color-mix(in srgb,var(--plate-a) 8%,transparent),transparent 55%),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,84px 84px;opacity:.8}
+.top{background:rgba(8,10,14,.91);border-color:rgba(255,255,255,.12)}
+.top .wrap{min-height:70px}.brand{font-size:1.13rem;letter-spacing:-.06em}.brand span{color:var(--plate-a)}
+nav a{font-family:'Heebo','Inter',sans-serif;font-size:.84rem;letter-spacing:0;color:#c2c9ce}
+.hero{min-height:660px;display:flex;align-items:center;padding:110px 0 90px;background:radial-gradient(ellipse 72% 110% at 10% 42%,color-mix(in srgb,var(--plate-a) 13%,transparent),transparent 70%),linear-gradient(135deg,#111722,#080a0e 65%);border-bottom:1px solid color-mix(in srgb,var(--plate-a) 25%,transparent)}
+.hero::before,.hero::after{display:none!important}.hero .fx-aurora{opacity:.25;mix-blend-mode:screen}
+.hero>.wrap{position:relative;z-index:2;width:calc(100% - 48px);max-width:1120px;margin-inline:auto}
+.hero .eyebrow{color:var(--plate-a);font-size:.8rem;letter-spacing:.12em;display:inline-flex;align-items:center;gap:12px;padding:7px 14px;border:1px solid color-mix(in srgb,var(--plate-a) 40%,transparent);border-radius:40px;background:rgba(8,10,14,.65);backdrop-filter:blur(12px)}
+.hero h1{font-family:'Heebo','Space Grotesk',sans-serif;font-size:clamp(3.6rem,7vw,7.3rem);font-weight:800;line-height:1.04;letter-spacing:-.065em;max-width:790px;margin:26px 0 22px;text-wrap:balance;text-shadow:0 6px 40px rgba(0,0,0,.35)}
+.hero h1 .grad{background:linear-gradient(110deg,var(--plate-a),var(--plate-b));-webkit-background-clip:text;background-clip:text}
+.hero p,.hero p.lede{color:#d0d4da;font-size:clamp(1.1rem,1.7vw,1.32rem);line-height:1.72;max-width:610px}
+.hero .pill{background:rgba(13,18,24,.75);border-color:color-mix(in srgb,var(--plate-a) 33%,transparent);color:#eef0ee;backdrop-filter:blur(14px)}
+.sc-visual,.hero .sc-visual{position:absolute;inset:auto 0 0 auto;top:2%;width:min(57%,800px);height:96%;z-index:1;opacity:1;transform:none;filter:none;pointer-events:none;overflow:hidden}
+.sc-visual .plate{position:absolute;inset:6% 5% 8% 0;border:1px solid color-mix(in srgb,var(--plate-a) 28%,transparent);border-radius:28px;transform:rotate(-7deg);background:radial-gradient(circle at 50% 50%,color-mix(in srgb,var(--plate-a) 13%,transparent),transparent 68%),repeating-linear-gradient(0deg,transparent 0 34px,rgba(255,255,255,.04) 35px 36px),repeating-linear-gradient(90deg,transparent 0 34px,rgba(255,255,255,.04) 35px 36px),#0c1119;box-shadow:0 35px 90px rgba(0,0,0,.6),inset 0 1px rgba(255,255,255,.13)}
+.sc-visual .plate::before{content:'';position:absolute;inset:13px;border:1px solid rgba(255,255,255,.12);border-radius:20px}.sc-visual .plate::after{content:'';position:absolute;top:24px;left:25px;width:38px;height:7px;border-radius:15px;background:var(--plate-a);box-shadow:52px 0 0 rgba(255,255,255,.2),102px 0 0 rgba(255,255,255,.13)}
+.sc-visual svg{position:relative;z-index:1;width:100%;height:100%;transform:none!important;filter:drop-shadow(0 0 23px color-mix(in srgb,var(--plate-a) 40%,transparent))}
+.sc-visual .lines{fill:none;stroke:var(--plate-a);stroke-width:2;opacity:.8}.sc-visual .nodes{fill:var(--plate-a);stroke:var(--plate-b);stroke-width:3}.sc-visual .mass{font:700 140px 'Space Grotesk',sans-serif;fill:var(--plate-b);opacity:.7}
+.sc-visual .sc-visual-caption{position:absolute;bottom:10%;left:7%;right:auto;color:var(--plate-a);font-size:.76rem;letter-spacing:.12em;background:#0b1018;padding:6px 12px;border:1px solid color-mix(in srgb,var(--plate-a) 40%,transparent);border-radius:6px;transform:rotate(-7deg);opacity:1}
+.section-tag{color:var(--plate-a);letter-spacing:.08em}.section-head h2,.guide h2{letter-spacing:-.04em}.section-head h2{font-size:clamp(2.6rem,5vw,4.5rem)}
+.site,.card,.feature,.entry,.notice{background:linear-gradient(145deg,color-mix(in srgb,var(--plate-a) 6%,#14191f),#0e1319 74%);border-color:rgba(255,255,255,.14);box-shadow:0 16px 54px rgba(0,0,0,.22)}
+.site{min-height:270px;padding:36px;border-radius:24px}.site h3{font-size:clamp(1.65rem,2.5vw,2.3rem);letter-spacing:-.045em}.site .tag{color:var(--plate-a)}
+.site .go,.btn{background:var(--plate-a);color:#101419;box-shadow:0 8px 28px color-mix(in srgb,var(--plate-a) 28%,transparent)}.site .go:hover,.btn:hover{color:#101419}
+.site:first-child{border-color:color-mix(in srgb,var(--plate-a) 52%,transparent)}.site:nth-child(2n){--plate-a:#a5b9ff}.site:nth-child(3n){--plate-a:#76e4d4}
+.site:hover{border-color:var(--plate-a);box-shadow:0 25px 55px rgba(0,0,0,.38)}
+.guide{max-width:860px}.guide :where(h2){font-size:clamp(2rem,4vw,3.1rem)}
+@media(max-width:700px){
+.top .wrap{padding-top:6px;min-height:68px}.brand{margin-bottom:0}nav a{font-size:.75rem}
+.hero{display:block;min-height:0;padding:208px 0 54px;background:radial-gradient(ellipse at 30% 19%,color-mix(in srgb,var(--plate-a) 15%,transparent),transparent 65%),#0a0e15}
+.hero>.wrap{width:calc(100% - 36px)}
+.sc-visual,.hero .sc-visual{top:-26px;left:14%;right:auto;width:90%;height:245px;opacity:1;filter:none;transform:none!important}
+.sc-visual .plate{inset:4% 6% 10% 0;transform:rotate(-5deg);border-radius:24px}.sc-visual svg{width:100%;height:100%}.sc-visual .sc-visual-caption{font-size:.64rem;bottom:13%}
+.hero .eyebrow{font-size:.7rem;letter-spacing:.035em;padding:5px 10px}
+.hero h1{font-size:clamp(3.0rem,13vw,4.4rem);line-height:1.08;margin:16px 0;letter-spacing:-.07em;max-width:100%}
+.hero p,.hero p.lede{font-size:1rem;line-height:1.63;margin-bottom:19px;color:#d5d9df}
+.hero .pill{font-size:.67rem;padding:5px 9px}.pills{gap:6px}
+main section{padding:70px 0}.section-head h2{font-size:2.55rem}.site{padding:27px;min-height:235px}.site h3{font-size:1.65rem}
+}
+@media(prefers-reduced-motion:reduce){.sc-visual,.sc-visual svg,.sc-visual .plate{animation:none!important;transform:none!important}}
+
 </style>
 <script id="fx-layer-js">
 /* FX layer 28.9 - aurora shader adapted from ThreeUI "Emerald Horizon" (MIT, (c) 2026 Meng To),
