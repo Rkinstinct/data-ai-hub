@@ -77,7 +77,7 @@ main section.sc-current>.section-head h2,main section.sc-current>h2,main h2.sc-c
 <body>
 <a class="skip" href="#main">לתוכן</a>
 <header class="top"><div class="wrap"><a class="brand" href="#top">DATA<span>&amp;</span>AI</a><nav aria-label="ניווט ראשי"><a href="#guides">מדריכי Claude</a><a href="#tools">כלים</a><a href="#digest">דיג'סט BI</a></nav></div></header>
-<div id="top" class="hero"><div class="sc-visual sc-hub" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path class="sc-visual-path" d="M20 60 L42 25 L74 30 L80 72 L48 80"/><circle class="sc-dot sc-dot-0" cx="20" cy="60" r="2"/><circle class="sc-dot sc-dot-1" cx="42" cy="25" r="2"/><circle class="sc-dot sc-dot-2" cx="74" cy="30" r="3"/><circle class="sc-dot sc-dot-3" cx="80" cy="72" r="2"/><circle class="sc-dot sc-dot-4" cx="48" cy="80" r="2"/></svg><span class="sc-visual-caption">שישה מסלולים · מקום אחד</span></div><div class="wrap"><div class="eyebrow">DATA &amp; AI · כל האתרים במקום אחד</div><h1>המדריכים והדיג'סט, <span class="grad">בכתובת אחת.</span></h1><p>סדרת מדריכי Claude מעשיים בעברית, ודיג'סט BI שמתעדכן כל יום. כל אתר עומד בפני עצמו - כאן נכנסים לכל אחד.</p><div class="pills"><span class="pill">6 אתרים</span><span class="pill">עברית · RTL</span><span class="pill">מתעדכן שוטף</span></div></div></div>
+<div id="top" class="hero"><canvas class="fx-aurora" aria-hidden="true"></canvas><div class="sc-visual sc-hub" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path class="sc-visual-path" d="M20 60 L42 25 L74 30 L80 72 L48 80"/><circle class="sc-dot sc-dot-0" cx="20" cy="60" r="2"/><circle class="sc-dot sc-dot-1" cx="42" cy="25" r="2"/><circle class="sc-dot sc-dot-2" cx="74" cy="30" r="3"/><circle class="sc-dot sc-dot-3" cx="80" cy="72" r="2"/><circle class="sc-dot sc-dot-4" cx="48" cy="80" r="2"/></svg><span class="sc-visual-caption">שישה מסלולים · מקום אחד</span></div><div class="wrap"><div class="eyebrow">DATA &amp; AI · כל האתרים במקום אחד</div><h1>המדריכים והדיג'סט, <span class="grad">בכתובת אחת.</span></h1><p>סדרת מדריכי Claude מעשיים בעברית, ודיג'סט BI שמתעדכן כל יום. כל אתר עומד בפני עצמו - כאן נכנסים לכל אחד.</p><div class="pills"><span class="pill">6 אתרים</span><span class="pill">עברית · RTL</span><span class="pill">מתעדכן שוטף</span></div></div></div>
 <main id="main" class="wrap">
 <section aria-labelledby="digest-title" id="digest"><div class="section-head"><div><div class="section-tag">01 / מתעדכן יומית</div><h2 id="digest-title">דיג'סט BI</h2><p>מהדורה יומית של רעיונות מעשיים ל-Power BI, BI בארגון ו-Claude, עם עדכוני הגרסה החודשית של Microsoft.</p></div></div>
 <div class="sites">
@@ -96,7 +96,7 @@ main section.sc-current>.section-head h2,main section.sc-current>h2,main h2.sc-c
 </div></section>
 
 </main>
-<footer><div class="wrap"><div>DATA&amp;AI - מדריכים ודיג'סט בעברית</div><div>עודכן: 28 בספטמבר 2026</div></div></footer>
+<footer><div class="wrap"><div>DATA&amp;AI - מדריכים ודיג'סט בעברית</div><div>עודכן: 28 בספטמבר 2026</div></div><div class="wrap fx-credits">שיפורי עיצוב ברכיבי קוד פתוח: <a href="https://github.com/MengTo/ThreeUI" rel="noopener">ThreeUI</a> · <a href="https://uiverse.io" rel="noopener">Uiverse</a> · <a href="https://www.hyperui.dev" rel="noopener">HyperUI</a> (MIT) · רעיון הספוט-לייט מ-<a href="https://21st.dev" rel="noopener">21st.dev</a></div></footer>
 
 <script id="scroll-craft-interactions">
 /* Original, progressively-enhanced reading timeline; no content is hidden if scripts fail. */
@@ -110,6 +110,114 @@ if(hero){let hp=Math.min(1,Math.max(0,-hero.getBoundingClientRect().top/Math.max
 let current=headings[0];for(const item of headings){if(item.getBoundingClientRect().top<=innerHeight*.42)current=item;else break}headings.forEach(el=>el.classList.toggle('sc-current',el===current));
 way.firstElementChild.textContent=String(Math.round(p*100)).padStart(2,'0')+'%';way.lastElementChild.textContent=current?titleOf(current):"מפת האתרים";}
 function tick(){if(!raf)raf=requestAnimationFrame(paint)}addEventListener('scroll',tick,{passive:true});addEventListener('resize',tick,{passive:true});paint();})();
+</script>
+<style id="fx-layer">
+/* ===== FX layer 28.9 - visual richness =====
+   Adapted with credit: ThreeUI "Emerald Horizon" shader idea (MIT, (c) 2026 Meng To, github.com/MengTo/ThreeUI),
+   Uiverse button effects (MIT, uiverse.io), HyperUI component polish (MIT, hyperui.dev),
+   spotlight-card idea via 21st.dev */
+@property --fx-a{syntax:'<angle>';initial-value:0deg;inherits:false}
+.fx-aurora{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.55;mix-blend-mode:screen}
+.hero>.wrap,.hero .sc-visual,.hero .orb{position:relative;z-index:1}
+.fx-credits{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.07);font-size:.74rem;color:#94A3B8;text-align:center;line-height:1.9}
+.fx-credits a{color:#94A3B8;text-decoration:underline dotted;text-underline-offset:3px}
+.fx-credits a:hover{color:#FFD600}
+/* spotlight cards (idea: 21st.dev) */
+html.fx .site:hover,html.fx .card:hover,html.fx .fcard:hover,html.fx .entry:hover{background-image:radial-gradient(240px circle at var(--fx-x,50%) var(--fx-y,50%),rgba(247,147,26,.13),transparent 70%);background-repeat:no-repeat}
+/* border beam on buttons (Uiverse style) */
+@keyframes fx-spin{to{--fx-a:360deg}}
+.go,.btn{position:relative;isolation:isolate}
+.go::after,.btn::after{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;background:conic-gradient(from var(--fx-a),transparent 0 62%,#FFD600 78%,#fff 85%,#F7931A 92%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;opacity:0;transition:opacity .35s;pointer-events:none;z-index:2}
+.site:hover .go::after,.go:hover::after,.btn:hover::after{opacity:1;animation:fx-spin 2.4s linear infinite}
+/* pill + section kicker polish (HyperUI style) */
+.pill{transition:border-color .3s,box-shadow .3s}
+.pill:hover{border-color:rgba(247,147,26,.5);box-shadow:0 0 14px -4px rgba(247,147,26,.5)}
+.section-tag{background:linear-gradient(to left,#F7931A,#FFD600);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* entrance rise */
+@keyframes fx-rise{from{opacity:0;transform:translateY(18px)}}
+@media (prefers-reduced-motion:no-preference){
+html.fx .sites .site,html.fx .fcard{animation:fx-rise .7s cubic-bezier(.22,.8,.3,1) both}
+html.fx .sites .site:nth-child(2),html.fx .fcard:nth-child(2){animation-delay:.07s}
+html.fx .sites .site:nth-child(3),html.fx .fcard:nth-child(3){animation-delay:.14s}
+html.fx .sites .site:nth-child(4),html.fx .fcard:nth-child(4){animation-delay:.21s}
+html.fx .sites .site:nth-child(5),html.fx .fcard:nth-child(5){animation-delay:.28s}
+html.fx .sites .site:nth-child(6),html.fx .fcard:nth-child(6){animation-delay:.35s}
+}
+@media (prefers-reduced-motion:reduce){
+.fx-aurora{opacity:.4}
+.site:hover .go::after,.go:hover::after,.btn:hover::after{animation:none}
+}
+</style>
+<script id="fx-layer-js">
+/* FX layer 28.9 - aurora shader adapted from ThreeUI "Emerald Horizon" (MIT, (c) 2026 Meng To),
+   recolored to the site palette and ported to raw WebGL (no library). Spotlight idea: 21st.dev.
+   Progressive enhancement only: content never depends on this script. */
+(()=>{
+document.documentElement.classList.add('fx');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduce&&matchMedia('(hover: hover)').matches){
+  document.querySelectorAll('.site,.card,.fcard,.entry').forEach(el=>{
+    el.addEventListener('pointermove',e=>{
+      const r=el.getBoundingClientRect();
+      el.style.setProperty('--fx-x',((e.clientX-r.left)/r.width*100)+'%');
+      el.style.setProperty('--fx-y',((e.clientY-r.top)/r.height*100)+'%');
+    },{passive:true});
+  });
+}
+const canvas=document.querySelector('.fx-aurora');
+if(!canvas)return;
+const hero=canvas.closest('.hero')||canvas.parentElement;
+const gl=canvas.getContext('webgl',{alpha:true,antialias:false,depth:false,stencil:false,powerPreference:'low-power'});
+if(!gl){canvas.remove();return;}
+const VS='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+const FS='precision mediump float;uniform float u_time;uniform vec2 u_resolution;'+
+'float hash(float n){return fract(sin(n)*1e4);}'+
+'float noise(float x){float i=floor(x);float f=fract(x);float u=f*f*(3.-2.*f);return mix(hash(i),hash(i+1.),u);}'+
+'void main(){vec2 st=gl_FragCoord.xy/u_resolution.xy;'+
+'float w=sin(st.x*3.0+u_time*0.5)*0.1+sin(st.x*5.0-u_time*0.3)*0.05;'+
+'float t=smoothstep(0.45,-0.05,st.y+w);'+
+'t*=(noise(st.x*2.0+u_time*0.1)*0.5+0.5)*1.5;'+
+'vec3 g=mix(vec3(0.969,0.576,0.102),vec3(1.0,0.839,0.0),st.x+sin(u_time*0.2)*0.5);'+
+'vec3 c=g*pow(t,1.5)*0.9;'+
+'c*=smoothstep(1.25,0.45,length(st-vec2(0.5,0.0)));'+
+'gl_FragColor=vec4(c,1.0);}';
+function sh(type,src){const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){return null;}return s;}
+const vs=sh(gl.VERTEX_SHADER,VS),fs=sh(gl.FRAGMENT_SHADER,FS);
+if(!vs||!fs){canvas.remove();return;}
+const pr=gl.createProgram();gl.attachShader(pr,vs);gl.attachShader(pr,fs);gl.linkProgram(pr);
+if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){canvas.remove();return;}
+gl.useProgram(pr);
+const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+const loc=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+const uT=gl.getUniformLocation(pr,'u_time'),uR=gl.getUniformLocation(pr,'u_resolution');
+function resize(){
+  const r=hero.getBoundingClientRect();
+  const d=Math.min(devicePixelRatio||1,1.25);
+  const w=Math.max(2,Math.round(r.width*d*0.75)),h=Math.max(2,Math.round(r.height*d*0.75));
+  if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h);gl.uniform2f(uR,w,h);}
+}
+resize();
+let raf=0,visible=true,last=0,start=performance.now();
+function draw(now){
+  raf=0;
+  if(now-last<33){raf=requestAnimationFrame(draw);return;}
+  last=now;
+  gl.uniform1f(uT,(now-start)*0.001);
+  gl.drawArrays(gl.TRIANGLES,0,3);
+  if(!reduce)raf=requestAnimationFrame(draw);
+}
+function kick(){if(!raf&&visible&&!document.hidden)raf=requestAnimationFrame(draw);}
+if(reduce){
+  gl.uniform1f(uT,8.0);gl.drawArrays(gl.TRIANGLES,0,3);
+}else{
+  new IntersectionObserver(en=>{visible=en[0].isIntersecting;if(visible)kick();else if(raf){cancelAnimationFrame(raf);raf=0;}}).observe(hero);
+  document.addEventListener('visibilitychange',()=>{if(document.hidden&&raf){cancelAnimationFrame(raf);raf=0;}else kick();});
+  kick();
+}
+new ResizeObserver(()=>{resize();if(reduce){gl.uniform1f(uT,8.0);gl.drawArrays(gl.TRIANGLES,0,3);}}).observe(hero);
+canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();if(raf){cancelAnimationFrame(raf);raf=0;}});
+})();
 </script>
 </body>
 </html>
