@@ -48,11 +48,36 @@ html{scroll-padding-top:112px}body{min-width:0}main,section,article,.wrap{min-wi
 .site:first-child h3{font-size:clamp(1.5rem,3vw,2.2rem)}
 @media(min-width:701px){.site:first-child{min-height:260px}.site:first-child p{max-width:52ch}}
 </style>
+
+<style id="scroll-craft-layer">
+/* Scroll-driven design informed by Nate Herk's scroll-craft (MIT), https://github.com/nateherkai/scroll-craft ; original implementation for Rkinstinct. */
+:root{--sc-progress:0;--sc-hero-p:0;--sc-chapter:0}
+html{scroll-padding-top:94px}
+body{overflow-x:clip}
+.sc-track{position:fixed;z-index:1001;top:0;inset-inline:0;height:3px;background:rgba(255,255,255,.12);pointer-events:none}
+.sc-track>span{display:block;width:100%;height:100%;background:linear-gradient(90deg,#EA580C,#F7931A,#FFD600);transform:scaleX(var(--sc-progress));transform-origin:right center;box-shadow:0 0 18px rgba(247,147,26,.7)}
+.sc-waypoint{position:fixed;z-index:90;bottom:calc(16px + env(safe-area-inset-bottom));inset-inline-start:16px;max-width:min(245px,calc(100vw - 32px));display:flex;gap:10px;align-items:center;border:1px solid rgba(247,147,26,.3);border-radius:999px;padding:8px 12px;background:rgba(15,17,21,.92);backdrop-filter:blur(16px);color:#f4e7d4;box-shadow:0 12px 30px rgba(0,0,0,.4);font:500 11px/1.35 'JetBrains Mono','Inter',sans-serif;direction:rtl;pointer-events:none}
+.sc-waypoint b{flex:none;min-width:2.6em;color:#FFD600;font-variant-numeric:tabular-nums}.sc-waypoint span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hero{position:relative;isolation:isolate;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 22% 55%,rgba(247,147,26,.14),transparent 36%);opacity:calc(.7 - var(--sc-hero-p)*.45)}
+.hero>.wrap{position:relative;z-index:2}
+.sc-visual{position:absolute;z-index:0;inset-inline-end:0;top:5%;width:min(42%,420px);height:90%;pointer-events:none;opacity:.53;filter:drop-shadow(0 0 22px rgba(247,147,26,.17));transform:translateY(calc(var(--sc-hero-p)*20px));transition:opacity .2s ease-out}
+.sc-visual svg{width:100%;height:100%;overflow:visible}.sc-visual-path{fill:none;stroke:#F7931A;stroke-width:.55;stroke-dasharray:3 2;stroke-dashoffset:calc((1 - var(--sc-hero-p))*18)}
+.sc-dot{fill:#FFD600;stroke:#F7931A;stroke-width:.8;filter:drop-shadow(0 0 4px #F7931A)}
+.sc-dot-2{fill:#fff}.sc-visual-caption{position:absolute;inset-inline-end:2%;bottom:13%;max-width:80%;color:#FFD600;background:#0F1115d9;padding:5px 9px;border:1px solid rgba(247,147,26,.35);border-radius:999px;font:500 10px 'JetBrains Mono','Inter',sans-serif}
+.sc-hub .sc-dot{r:2.6}.sc-digest .sc-visual-path{stroke-dasharray:none;stroke-width:1.2}.sc-graph .sc-visual-path{stroke:#FFD600}.sc-brain .sc-visual-path{stroke-dasharray:2 2}.sc-files .sc-visual-path{stroke-width:1.2}.sc-pbi .sc-dot{fill:#F7931A}.sc-cloud .sc-visual-path{stroke-dasharray:1 2}
+main :is(section,h2[id],h3[id]){scroll-margin-top:96px}
+.sc-current{--sc-edge:rgba(247,147,26,.85)}
+main section.sc-current>.section-head h2,main section.sc-current>h2,main h2.sc-current{border-inline-start:3px solid var(--sc-edge);padding-inline-start:12px;transition:border-color .2s ease-out,padding .2s ease-out}
+@media(hover:hover) and (pointer:fine){.sc-current .site:hover,.sc-current .card:hover{box-shadow:0 16px 45px rgba(247,147,26,.18)}}
+@media(max-width:700px){.sc-visual{width:64%;height:56%;top:3%;opacity:.28}.sc-visual-caption{display:none}.sc-waypoint{bottom:calc(12px + env(safe-area-inset-bottom));inset-inline-start:12px;padding:6px 10px;font-size:10px}.hero h1{position:relative;z-index:2}}
+@media(prefers-reduced-motion:reduce){.sc-visual{transform:none!important}.sc-visual-path{stroke-dashoffset:0!important}.hero::after{opacity:.55!important}.sc-track>span{transition:none!important}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">לתוכן</a>
 <header class="top"><div class="wrap"><a class="brand" href="#top">DATA<span>&amp;</span>AI</a><nav aria-label="ניווט ראשי"><a href="#guides">מדריכי Claude</a><a href="#tools">כלים</a><a href="#digest">דיג'סט BI</a></nav></div></header>
-<div id="top" class="hero"><div class="wrap"><div class="eyebrow">DATA &amp; AI · כל האתרים במקום אחד</div><h1>המדריכים והדיג'סט, <span class="grad">בכתובת אחת.</span></h1><p>סדרת מדריכי Claude מעשיים בעברית, ודיג'סט BI שמתעדכן כל יום. כל אתר עומד בפני עצמו - כאן נכנסים לכל אחד.</p><div class="pills"><span class="pill">6 אתרים</span><span class="pill">עברית · RTL</span><span class="pill">מתעדכן שוטף</span></div></div></div>
+<div id="top" class="hero"><div class="sc-visual sc-hub" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path class="sc-visual-path" d="M20 60 L42 25 L74 30 L80 72 L48 80"/><circle class="sc-dot sc-dot-0" cx="20" cy="60" r="2"/><circle class="sc-dot sc-dot-1" cx="42" cy="25" r="2"/><circle class="sc-dot sc-dot-2" cx="74" cy="30" r="3"/><circle class="sc-dot sc-dot-3" cx="80" cy="72" r="2"/><circle class="sc-dot sc-dot-4" cx="48" cy="80" r="2"/></svg><span class="sc-visual-caption">שישה מסלולים · מקום אחד</span></div><div class="wrap"><div class="eyebrow">DATA &amp; AI · כל האתרים במקום אחד</div><h1>המדריכים והדיג'סט, <span class="grad">בכתובת אחת.</span></h1><p>סדרת מדריכי Claude מעשיים בעברית, ודיג'סט BI שמתעדכן כל יום. כל אתר עומד בפני עצמו - כאן נכנסים לכל אחד.</p><div class="pills"><span class="pill">6 אתרים</span><span class="pill">עברית · RTL</span><span class="pill">מתעדכן שוטף</span></div></div></div>
 <main id="main" class="wrap">
 <section aria-labelledby="digest-title" id="digest"><div class="section-head"><div><div class="section-tag">01 / מתעדכן יומית</div><h2 id="digest-title">דיג'סט BI</h2><p>מהדורה יומית של רעיונות מעשיים ל-Power BI, BI בארגון ו-Claude, עם עדכוני הגרסה החודשית של Microsoft.</p></div></div>
 <div class="sites">
@@ -72,5 +97,19 @@ html{scroll-padding-top:112px}body{min-width:0}main,section,article,.wrap{min-wi
 
 </main>
 <footer><div class="wrap"><div>DATA&amp;AI - מדריכים ודיג'סט בעברית</div><div>עודכן: 28 בספטמבר 2026</div></div></footer>
+
+<script id="scroll-craft-interactions">
+/* Original, progressively-enhanced reading timeline; no content is hidden if scripts fail. */
+(()=>{const root=document.documentElement,main=document.querySelector('main'),hero=document.querySelector('.hero');if(!main)return;
+const track=document.createElement('div');track.className='sc-track';track.setAttribute('aria-hidden','true');track.innerHTML='<span></span>';document.body.append(track);
+const way=document.createElement('div');way.className='sc-waypoint';way.setAttribute('aria-hidden','true');way.innerHTML='<b>00%</b><span></span>';document.body.append(way);
+const headings=[...main.querySelectorAll('section, h2[id]')].filter(el=>el.tagName==='SECTION'||!el.closest('section'));
+const titleOf=el=>el.querySelector('h2,h3')?.textContent?.trim()||el.textContent.trim().slice(0,46);
+let raf=0;function paint(){raf=0;const d=document.documentElement,total=Math.max(1,d.scrollHeight-innerHeight),p=Math.min(1,Math.max(0,scrollY/total));root.style.setProperty('--sc-progress',p.toFixed(4));
+if(hero){let hp=Math.min(1,Math.max(0,-hero.getBoundingClientRect().top/Math.max(1,hero.offsetHeight)));root.style.setProperty('--sc-hero-p',hp.toFixed(3));}
+let current=headings[0];for(const item of headings){if(item.getBoundingClientRect().top<=innerHeight*.42)current=item;else break}headings.forEach(el=>el.classList.toggle('sc-current',el===current));
+way.firstElementChild.textContent=String(Math.round(p*100)).padStart(2,'0')+'%';way.lastElementChild.textContent=current?titleOf(current):"מפת האתרים";}
+function tick(){if(!raf)raf=requestAnimationFrame(paint)}addEventListener('scroll',tick,{passive:true});addEventListener('resize',tick,{passive:true});paint();})();
+</script>
 </body>
 </html>
