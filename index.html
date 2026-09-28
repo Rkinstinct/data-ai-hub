@@ -15,11 +15,44 @@
 <style>
 .sites{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.site{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;text-decoration:none;color:var(--ink);box-shadow:0 0 50px -10px rgba(247,147,26,.08);transition:all .3s;overflow:hidden}.site:before{content:"";position:absolute;top:0;right:0;width:52px;height:52px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);border-top-right-radius:14px;opacity:.55;transition:opacity .3s;pointer-events:none}.site:after{content:"";position:absolute;bottom:0;left:0;width:52px;height:52px;border-bottom:2px solid var(--gold);border-left:2px solid var(--gold);border-bottom-left-radius:14px;opacity:.35;transition:opacity .3s;pointer-events:none}.site:hover{transform:translateY(-4px);border-color:rgba(247,147,26,.5);box-shadow:0 0 30px -5px rgba(247,147,26,.45)}.site:hover:before,.site:hover:after{opacity:1}.site .tag{font-size:.7rem;font-weight:500;letter-spacing:.1em;color:var(--gold);font-family:'JetBrains Mono','Heebo',monospace}.site h3{font-size:1.45rem;font-family:'Space Grotesk','Heebo',sans-serif;line-height:1.3;letter-spacing:-.01em;margin:10px 0;color:#fff}.site p{margin:0 0 18px;color:var(--muted);font-size:.97rem;line-height:1.8;flex:1}.site .go{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:linear-gradient(to left,var(--accent-2),var(--accent));color:#fff;font-weight:700;border-radius:999px;padding:10px 18px;font-size:.88rem;min-height:44px;box-shadow:0 0 18px -5px rgba(234,88,12,.5);transition:all .3s}.site:hover .go{box-shadow:0 0 28px -5px rgba(247,147,26,.65)}.site:first-child{grid-column:1/-1;border-color:rgba(247,147,26,.4)}@media(max-width:700px){.sites{grid-template-columns:minmax(0,1fr);gap:12px}.site{padding:22px}.site h3{font-size:1.28rem}}
 </style>
+<style>
+
+/* UI craft pass informed by ibelick/ui-skills (MIT), https://github.com/ibelick/ui-skills
+   Copyright (c) 2026 Julien Thibeaut. License: https://github.com/ibelick/ui-skills/blob/main/LICENSE
+   Original CSS implementation for the DATA&AI Bitcoin DeFi design system. */
+:root{color-scheme:dark;--craft-ease:cubic-bezier(.2,.8,.2,1);--craft-ring:0 0 0 3px rgba(247,147,26,.24)}
+html{scroll-padding-top:112px}body{min-width:0}main,section,article,.wrap{min-width:0}
+:where(a,button,summary,input,select):focus-visible{outline:2px solid #FFD600!important;outline-offset:4px;box-shadow:var(--craft-ring)}
+:where(button,a,summary){-webkit-tap-highlight-color:rgba(247,147,26,.22)}
+:where(h1,h2,h3){text-wrap:balance}p,li{overflow-wrap:break-word;text-wrap:pretty}
+:where(code,pre){font-variant-ligatures:none}pre{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-color:#F7931A #15171b}code{overflow-wrap:anywhere}pre code{overflow-wrap:normal}
+:where(.pill,.eyebrow,.section-tag,.tag,.badge,.count){font-variant-numeric:tabular-nums}
+:where(.top nav a,nav a,.btn,.go){transition:color .18s ease,background-color .18s ease,transform .25s var(--craft-ease),box-shadow .25s ease}
+:where(.top nav a,nav a):hover{transform:translateY(-2px)}
+:where(.card,.site,.fcard,.feature,.notice,.callout,blockquote,.verdict){background-image:linear-gradient(135deg,rgba(255,255,255,.035),transparent 45%);border-color:rgba(247,147,26,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 16px 38px -30px rgba(247,147,26,.32)}
+@media(hover:hover){:where(.card,.site,.fcard):hover{transform:translateY(-4px);border-color:rgba(247,147,26,.57);box-shadow:inset 0 1px 0 rgba(255,255,255,.11),0 20px 45px -22px rgba(247,147,26,.28)}}
+:where(.card,.site,.fcard){transition:transform .28s var(--craft-ease),border-color .25s ease,box-shadow .28s ease}
+:where(.card,.site,.fcard):focus-within{border-color:#FFD600}
+:where(.hero h1){text-shadow:0 12px 55px rgba(247,147,26,.19)}
+:where(.hero .eyebrow){display:inline-flex;align-items:center;gap:10px}
+:where(.hero .eyebrow)::before{content:'';display:inline-block;width:26px;height:1px;background:linear-gradient(90deg,#F7931A,#FFD600);box-shadow:0 0 12px #F7931A}
+:where(.section-tag){display:inline-block;padding-block:3px;border-bottom:1px solid rgba(247,147,26,.35)}
+:where(.pill){box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+@media(max-width:700px){:where(.hero){padding-block:48px 42px}:where(.wrap){max-width:100%}:where(.top nav,nav){overscroll-behavior-inline:contain;scroll-snap-type:x proximity}:where(.top nav a,nav a){scroll-snap-align:start}:where(.card,.site,.fcard){transform:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Editorial index: one featured entry, then a scannable grid. */
+.site{isolation:isolate;min-height:220px}.site::before,.site::after{z-index:-1}.site .tag{text-transform:uppercase}.site h3{max-width:27ch}.site .go{margin-top:auto;align-self:flex-start;position:relative;z-index:1}
+.site:hover .go,.site:focus-visible .go{transform:translateX(-4px);box-shadow:0 8px 24px rgba(247,147,26,.3)}
+.site:first-child{background:radial-gradient(circle at 12% 15%,rgba(247,147,26,.17),transparent 42%),linear-gradient(130deg,#17130e,#0F1115 58%)}
+.site:first-child h3{font-size:clamp(1.5rem,3vw,2.2rem)}
+@media(min-width:701px){.site:first-child{min-height:260px}.site:first-child p{max-width:52ch}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">לתוכן</a>
 <header class="top"><div class="wrap"><a class="brand" href="#top">DATA<span>&amp;</span>AI</a><nav aria-label="ניווט ראשי"><a href="#guides">מדריכי Claude</a><a href="#tools">כלים</a><a href="#digest">דיג'סט BI</a></nav></div></header>
-<div id="top" class="hero"><div class="wrap"><div class="eyebrow">DATA &amp; AI · כל האתרים במקום אחד</div><h1>המדריכים והדיג'סט, <span class="grad">בכתובת אחת.</span></h1><p>סדרת מדריכי Claude מעשיים בעברית, ודיג'סט BI שמתעדכן כל יום. כל אתר עומד בפני עצמו - כאן נכנסים לכל אחד.</p><div class="pills"><span class="pill">6 אתרים</span><span class="pill">עברית · RTL</span><span class="pill">מתעדכן שוטף</span></div></div></div>
+<div id="top" class="hero"><div class="wrap"><div class="eyebrow">DATA &amp; AI · כל האתרים במקום אחד</div><h1>המדריכים והדיג'סט, <span class="grad">בכתובת אחת.</span></h1><p>סדרת מדריכי Claude מעשיים בעברית, ודיג'סט BI שמתעדכן כל יום. כל אתר עומד בפני עצמו - כאן נכנסים לכל אחד.</p><div class="pills"><span class="pill">7 אתרים</span><span class="pill">עברית · RTL</span><span class="pill">מתעדכן שוטף</span></div></div></div>
 <main id="main" class="wrap">
 <section aria-labelledby="digest-title" id="digest"><div class="section-head"><div><div class="section-tag">01 / מתעדכן יומית</div><h2 id="digest-title">דיג'סט BI</h2><p>מהדורה יומית של רעיונות מעשיים ל-Power BI, BI בארגון ו-Claude, עם עדכוני הגרסה החודשית של Microsoft.</p></div></div>
 <div class="sites">
@@ -36,6 +69,7 @@
 <div class="sites">
 <a class="site" href="https://rkinstinct.github.io/floci-guide/"><span class="tag">מדריך חדש · ענן מקומי</span><h3>Floci - ענן מקומי בחינם</h3><p>אמולטורי ענן מקומיים בקוד פתוח ל-AWS, Azure, GCP ו-OCI: מה זה, יכולות, מה אפשר לעשות עם זה בפועל, מגבולות ופסק דין. תחליף חינמי ל-LocalStack, ומתאים במיוחד כסנדבוקס לסוכני AI.</p><span class="go">למדריך ←</span></a>
 </div></section>
+<section aria-labelledby="play-title" id="play"><div class="section-head"><div><div class="section-tag">04 / משחק</div><h2 id="play-title">לוקחים הפסקה</h2><p>דמו אסטרטגיה קטן לטלפון - בונים כפר, מגייסים לוחמים ונלחמים על העמק.</p></div></div><div class="sites"><a class="site" href="https://rkinstinct.github.io/valley-of-sprouts-game/"><span class="tag">משחק · עובד בטלפון</span><h3>עמק הניצנים</h3><p>איסוף משאבים, בנייה, תקופות, פשיטות וקרב נגד מאחז יריב. התחילו בכמה נגיעות.</p><span class="go">לשחק עכשיו ←</span></a></div></section>
 </main>
 <footer><div class="wrap"><div>DATA&amp;AI - מדריכים ודיג'סט בעברית</div><div>עודכן: 28 בספטמבר 2026</div></div></footer>
 </body>
