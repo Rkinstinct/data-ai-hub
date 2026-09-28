@@ -81,7 +81,7 @@ main section.sc-current>.section-head h2,main section.sc-current>h2,main h2.sc-c
   #guides .sites{grid-template-columns:repeat(2,minmax(0,1fr))}#guides .site:first-child{grid-column:1/-1;min-height:310px;background:linear-gradient(135deg,#332315,#101419 72%)}
   @media(max-width:700px){#digest .site{min-height:320px;padding:30px}#digest .site:after{font-size:10rem;left:-8%}#guides .sites{grid-template-columns:1fr}}
   </style>
-</head>
+<style id="desktop-separation">@media(min-width:701px){.hero .sc-visual{left:0;right:auto;width:min(48%,730px)}.hero>.wrap{margin-right:auto;margin-left:auto}.hero h1{max-width:55%}.hero p,.hero p.lede{max-width:50%}.hero .pills{max-width:53%}}@media(min-width:701px) and (max-width:1050px){.hero h1{font-size:clamp(3.2rem,6vw,5rem)}}@media(max-width:700px){.hero .sc-visual{left:14%;right:auto;width:90%}.hero h1,.hero p,.hero p.lede,.hero .pills{max-width:100%}}</style></head>
 <body style="--plate-a:#ffbb45;--plate-b:#f96335">
 <a class="skip" href="#main">לתוכן</a>
 <header class="top"><div class="wrap"><a class="brand" href="#top">DATA<span>&amp;</span>AI</a><nav aria-label="ניווט ראשי"><a href="#guides">מדריכי Claude</a><a href="#tools">כלים</a><a href="#digest">דיג'סט BI</a></nav></div></header>
@@ -272,4 +272,4 @@ canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();if(raf){cancel
 })();
 </script>
 </body>
-   </html>
+</html>
